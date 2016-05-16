@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="DrN-Kl-igr">
+            <objects>
+                <viewController storyboardIdentifier="mainvc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pWv-mb-3K0" customClass="ViewController" customModule="GeoSerach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KVO-02-0zF"/>
+                        <viewControllerLayoutGuide type="bottom" id="CgZ-zV-kw5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ziN-zO-5H2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zv5-6S-JjZ">
+                                <rect key="frame" x="0.0" y="137" width="600" height="463"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="LK6-9t-1Km" style="IBUITableViewCellStyleDefault" id="XtC-NS-RUo">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" tableViewCell="XtC-NS-RUo" id="vjT-pP-8Bl">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LK6-9t-1Km">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pWv-mb-3K0" id="A04-n2-2jx"/>
+                                    <outlet property="delegate" destination="pWv-mb-3K0" id="GEp-mH-b9P"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEa-dC-QVe">
+                                <rect key="frame" x="128" y="74" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="DoSomeThing:" destination="pWv-mb-3K0" eventType="touchUpInside" id="hh8-FO-XMl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Zv5-6S-JjZ" id="xyu-o5-yGh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AmO-3e-wdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="-163"/>
+        </scene>
+        <!--Map Query View Controller-->
+        <scene sceneID="dy7-72-ZqN">
+            <objects>
+                <viewController storyboardIdentifier="mapvc" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JaS-iQ-4Kb" customClass="MapQueryViewController" customModule="GeoSerach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fah-ci-PBf"/>
+                        <viewControllerLayoutGuide type="bottom" id="jA0-Gl-Lr3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P4w-EK-28X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FjG-jH-RxE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="JaS-iQ-4Kb" id="0bD-0b-fJu"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LxS-pq-b9j" customClass="CustomBorderButton" customModule="GeoSerach" customModuleProvider="target">
+                                <rect key="frame" x="12" y="79" width="57" height="30"/>
+                                <state key="normal" title="Draw"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="DrawAreaOnMap:" destination="JaS-iQ-4Kb" eventType="touchUpInside" id="SeW-Ez-upy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FjG-jH-RxE" firstAttribute="leading" secondItem="P4w-EK-28X" secondAttribute="leading" id="B4n-UJ-58m"/>
+                            <constraint firstItem="jA0-Gl-Lr3" firstAttribute="top" secondItem="FjG-jH-RxE" secondAttribute="bottom" id="IeU-Ak-1UP"/>
+                            <constraint firstItem="FjG-jH-RxE" firstAttribute="top" secondItem="P4w-EK-28X" secondAttribute="top" id="OgV-h5-1k8"/>
+                            <constraint firstAttribute="trailing" secondItem="FjG-jH-RxE" secondAttribute="trailing" id="Ra1-lx-LPX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="FjG-jH-RxE" id="aVd-MV-yod"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i2C-6Q-zUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="-163"/>
+        </scene>
+        <!--Loading Controller-->
+        <scene sceneID="DKQ-w7-bMO">
+            <objects>
+                <viewController storyboardIdentifier="LoadingVC" id="BGi-S0-cTE" userLabel="Loading Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W27-5w-yi2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Afg-9W-Hhn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6ag-CH-sB3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nUU-aH-SvF">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4un-me-7Kg">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYy-5Q-F4M">
+                                <rect key="frame" x="265" y="324" width="70" height="21"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                <color key="textColor" red="0.41568627949999998" green="0.50588238240000005" blue="0.21176470820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431610000004" green="0.95686274770000002" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eYy-5Q-F4M" firstAttribute="top" secondItem="4un-me-7Kg" secondAttribute="bottom" constant="14" id="JvG-iz-PEF"/>
+                            <constraint firstItem="nUU-aH-SvF" firstAttribute="centerY" secondItem="6ag-CH-sB3" secondAttribute="centerY" id="ZjF-Rq-eYu"/>
+                            <constraint firstItem="nUU-aH-SvF" firstAttribute="centerX" secondItem="6ag-CH-sB3" secondAttribute="centerX" id="hfU-cP-54g"/>
+                            <constraint firstItem="eYy-5Q-F4M" firstAttribute="centerX" secondItem="4un-me-7Kg" secondAttribute="centerX" id="uCH-rM-KiN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJY-Yn-vY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="193"/>
+        </scene>
+    </scenes>
+</document>
